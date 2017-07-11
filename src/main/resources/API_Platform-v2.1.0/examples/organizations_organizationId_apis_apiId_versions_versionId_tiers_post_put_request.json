@@ -1,0 +1,10 @@
+{
+   "apiVersionId":85965,
+   "status":"ACTIVE",
+   "autoApprove":true,
+   "visible":true,
+   "maximumRequests":5,
+   "timePeriodInMilliseconds":"1",
+   "name":"tierA",
+   "description":"tier description"
+}

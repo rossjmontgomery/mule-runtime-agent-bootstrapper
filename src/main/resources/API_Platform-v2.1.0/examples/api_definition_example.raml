@@ -1,0 +1,21 @@
+#%RAML 1.0
+title: raml-service
+version: 0.5
+#baseUri: http://www.mockdomain.com
+baseUri: https://mocksvc.mulesoft.com/mocks/520bfa5a-9afb-47b6-a770-5f86a890170e
+types:
+  Career:
+    properties:
+      title:
+        type: string
+
+/careers:
+  get:
+    description: Get all careers
+    responses:
+      200:
+        body:
+          application/json:
+            type: Career[]
+            example: |
+              [{"title":"Scrum Master"}, {"title":"Architect Software Engineer"}, {"title":"Lead SDET"}]

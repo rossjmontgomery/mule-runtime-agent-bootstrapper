@@ -1,0 +1,15 @@
+[
+  {
+    "audit": {
+      "created": {
+        "date": "2016-01-05T12:07:31.057Z"
+      },
+      "updated": {}
+    },
+    "id": 856,
+    "masterOrganizationId": "f0c9b011-980e-4928-9430-e60e3a97c043",
+    "organizationId": "f0c9b011-980e-4928-9430-e60e3a97c043",
+    "userId": "57e281b5-ec5b-4701-80a0-92a936a68da3",
+    "portalTermsId": 20
+  }
+]

@@ -1,0 +1,8 @@
+{
+   "type":"CH",
+   "overwrite":true,
+   "applicationName":"api3",
+   "environmentId":"e13f4194-d679-483c-8d01-9fccb132491c",
+   "environmentName":"Production",
+   "gatewayVersion":"3.8.0"
+}

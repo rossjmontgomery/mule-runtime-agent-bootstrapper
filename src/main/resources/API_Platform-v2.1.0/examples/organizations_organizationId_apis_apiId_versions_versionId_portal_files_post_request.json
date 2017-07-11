@@ -1,0 +1,6 @@
+--myBoundary
+Content-Disposition: form-data; name="file"; filename="new_file.pdf"
+Content-Type: text/javascript
+
+
+--myBoundary--

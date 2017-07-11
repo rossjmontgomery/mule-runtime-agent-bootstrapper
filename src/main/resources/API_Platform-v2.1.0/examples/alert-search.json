@@ -1,0 +1,69 @@
+{
+  "total": 1234,
+  "data": [
+    {
+      "apiVersion": {
+        "name": "My First API",
+        "id": 12345,
+        "apiId": 67890
+      },
+      "name": "My First API's Request Count Alert",
+      "severity": "warning",
+      "recipients": [
+        {
+          "role": "Api Version Owner"
+        },
+        {
+          "userId": "abcde-fghij-klmno",
+          "name":   "Jane Doe",
+          "email":  "jane.doe@example.com"
+        }
+      ],
+      "period": {
+        "duration": {
+          "count": 1,
+          "weight": "HOURS"
+        },
+        "repeat": 4
+      },
+      "type": "requestCount",
+      "condition": {
+        "aggregate": "count",
+        "operator": "GREATER_THAN",
+        "value": 1000
+      }
+    },
+    {
+      "apiVersion": {
+        "name": "My First API",
+        "id": 12345,
+        "apiId": 67890
+      },
+      "name": "My First API's Request Count Alert",
+      "severity": "warning",
+      "recipients": [
+        {
+          "role": "Api Version Owner"
+        },
+        {
+          "userId": "abcde-fghij-klmno",
+          "name":   "Jane Doe",
+          "email":  "jane.doe@example.com"
+        }
+      ],
+      "period": {
+        "duration": {
+          "count": 1,
+          "weight": "HOURS"
+        },
+        "repeat": 4
+      },
+      "type": "requestCount",
+      "condition": {
+        "aggregate": "count",
+        "operator": "GREATER_THAN",
+        "value": 1000
+      }
+    }
+  ]
+}

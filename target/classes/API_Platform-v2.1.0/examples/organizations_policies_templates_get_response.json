@@ -1,0 +1,163 @@
+[
+   {
+      "configuration":[
+         {
+            "propertyName":"publicResource",
+            "name":"Public resource",
+            "defaultValue":true,
+            "type":"boolean",
+            "optional":true
+         },
+         {
+            "propertyName":"supportCredentials",
+            "name":"Support credentials",
+            "defaultValue":false,
+            "type":"boolean",
+            "optional":true
+         },
+         {
+            "propertyName":"originGroups",
+            "name":"Origin Groups",
+            "type":"originGroup",
+            "defaultValue":[
+
+            ],
+            "allowMultiple":true,
+            "configuration":[
+               {
+                  "propertyName":"originGroupName",
+                  "name":"Origin Group Name",
+                  "type":"string",
+                  "optional":false,
+                  "sensitive":false,
+                  "allowMultiple":false,
+                  "defaultValue":"Default group"
+               },
+               {
+                  "propertyName":"origins",
+                  "name":"Origins",
+                  "description":"Comma separated list of allowed origins",
+                  "type":"string",
+                  "optional":false,
+                  "sensitive":false,
+                  "allowMultiple":true,
+                  "defaultValue":[
+
+                  ]
+               },
+               {
+                  "propertyName":"accessControlMaxAge",
+                  "name":"Access control max age",
+                  "description":"Indicates how long the results of a preflight request can be cached (in seconds)",
+                  "type":"int",
+                  "defaultValue":30,
+                  "minimumValue":0,
+                  "maximumValue":2147483647,
+                  "optional":false
+               },
+               {
+                  "propertyName":"allowedMethods",
+                  "name":"Allowed methods",
+                  "allowMultiple":true,
+                  "defaultValue":[
+                     {
+                        "methodName":"CONNECT",
+                        "isAllowed":true
+                     },
+                     {
+                        "methodName":"DELETE",
+                        "isAllowed":true
+                     },
+                     {
+                        "methodName":"GET",
+                        "isAllowed":true
+                     },
+                     {
+                        "methodName":"OPTIONS",
+                        "isAllowed":true
+                     },
+                     {
+                        "methodName":"PATCH",
+                        "isAllowed":true
+                     },
+                     {
+                        "methodName":"POST",
+                        "isAllowed":true
+                     },
+                     {
+                        "methodName":"PUT",
+                        "isAllowed":true
+                     },
+                     {
+                        "methodName":"TRACE",
+                        "isAllowed":true
+                     }
+                  ],
+                  "type":"httpMethod",
+                  "configuration":[
+                     {
+                        "propertyName":"methodName",
+                        "type":"string"
+                     },
+                     {
+                        "propertyName":"isAllowed",
+                        "type":"boolean"
+                     }
+                  ]
+               },
+               {
+                  "propertyName":"headers",
+                  "name":"Headers",
+                  "description":"Comma separated list of request headers allowed to be sent to this API",
+                  "type":"string",
+                  "optional":true,
+                  "sensitive":false,
+                  "allowMultiple":true,
+                  "defaultValue":[
+
+                  ]
+               },
+               {
+                  "propertyName":"exposedHeaders",
+                  "name":"Exposed headers",
+                  "description":"Comma separated list of response headers clients of this API can access",
+                  "type":"string",
+                  "optional":true,
+                  "sensitive":false,
+                  "allowMultiple":true,
+                  "defaultValue":[
+
+                  ]
+               }
+            ]
+         }
+      ],
+      "gatewayCompatibility":">1.0.0",
+      "id":"cors",
+      "name":"Cross-Origin resource sharing",
+      "fixedOrder":1,
+      "supportedPoliciesVersions":[
+         "v1",
+         "v2",
+         "v3",
+         "v4",
+         "v5",
+         "v6",
+         "v7",
+         "v8",
+         "v9"
+      ],
+      "description":"CORS (Cross-origin resource sharing) is a standard mechanism that allows JavaScript XMLHttpRequest (XHR) calls executed in a web page to interact with resources from non-origin domains.\n\nCORS is a commonly implemented solution to the \"same-origin policy\" that is enforced by all browsers.\n",
+      "category":"Compliance",
+      "type":"system",
+      "standalone":true,
+      "requiresConnectivity":false,
+      "formSize":"large",
+      "providedCharacteristics":[
+         "CORS enabled"
+      ],
+      "requiredCharacteristics":[
+
+      ]
+   }
+]

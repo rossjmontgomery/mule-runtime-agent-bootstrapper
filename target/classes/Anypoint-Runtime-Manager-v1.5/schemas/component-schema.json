@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://anypoint.io/amc",
+  "type": "object",
+  "properties": {
+    "configurableComponentId": {
+      "id": "http://anypoint.io/amc/component/configurableComponentId",
+      "type": "integer"
+    },
+    "enabled": {
+      "id": "http://anypoint.io/amc/component/enabled",
+      "type": "string"
+    },
+    "configurationProperties": {
+      "id": "http://anypoint.io/amc/muleLabel",
+      "type": "object",
+      "patternProperties": {
+        ".{1,}": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "required": [
+    "configurableComponentId",
+    "enabled",
+    "configurationProperties"
+  ]
+}

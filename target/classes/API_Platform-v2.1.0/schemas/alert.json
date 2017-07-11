@@ -1,0 +1,159 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "policyType": {
+      "type": "object",
+      "required": ["type", "policyId", "policyTemplate"],
+      "properties": {
+        "type": { "enum": ["api-policy-violation"] },
+        "policyId": { "type": "integer" },
+        "policyTemplate": {
+          "type": "object",
+          "required": ["id", "name"],
+          "properties": {
+            "id": { "type": "string" },
+            "name": {
+              "maxLength": 150,
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "requestCountType": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": { "enum": ["api-request-count"] }
+      }
+    },
+    "responseCodeType": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": { "enum": ["api-response-code"] }
+      }
+    },
+    "responseTimeType": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": { "enum": ["api-response-time"] }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    {
+      "anyOf": [
+        { "$ref": "#/definitions/policyType" },
+        { "$ref": "#/definitions/requestCountType" },
+        { "$ref": "#/definitions/responseCodeType" },
+        { "$ref": "#/definitions/responseTimeType" }
+      ]
+    },
+    {
+      "required": ["apiAlertsVersion", "name", "api", "apiVersion", "enabled", "severity", "recipients", "period", "condition"],
+      "properties": {
+        "apiAlertsVersion": { "enum": ["1.0.0"] },
+        "name": {
+          "type": "string",
+          "maxLength": 255,
+          "minLength": 1
+        },
+        "api": {
+          "type": "object",
+          "required": ["id", "name"],
+          "properties": {
+            "id": { "type": "integer" },
+            "name": {
+              "type": "string",
+              "maxLength": 64,
+              "minLength": 1
+            }
+          }
+        },
+        "apiVersion": {
+          "type": "object",
+          "required": ["id", "name"],
+          "properties": {
+            "id": { "type": "integer" },
+            "name": {
+              "type": "string",
+              "maxLength": 150,
+              "minLength": 1
+            }
+          }
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "severity": { "enum": ["INFO", "WARNING", "CRITICAL"] },
+        "recipients": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["type", "value"],
+            "properties": {
+              "firstName": { "type": "string" },
+              "lastName": { "type": "string" },
+              "type": { "enum": ["email", "role", "user"] },
+              "value": {
+                "maxLength": 254,
+                "type": "string"
+              }
+            }
+          }
+        },
+        "period": {
+          "type": "object",
+          "required": ["duration", "repeat"],
+          "properties": {
+            "duration": {
+              "type": "object",
+              "required": ["count", "weight"],
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "weight": { "enum": ["DAYS", "HOURS", "MINUTES"] }
+              }
+            },
+            "repeat": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        },
+        "condition": {
+          "type": "object",
+          "required": ["aggregate", "operator", "value"],
+          "properties": {
+            "aggregate": { "enum": ["COUNT", "AVG", "SUM", "MIN", "MAX"] },
+            "operator": { "enum": ["GREATER_THAN", "LESS_THAN", "EQUAL"] },
+            "value": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "resourceType": { "enum": ["api-version"] },
+            "filter": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "property": { "type": "string" },
+                  "operator": { "enum": ["GREATER_THAN", "LESS_THAN", "EQUAL", "MATCHES", "IN", "BETWEEN", "EXIST"] },
+                  "values": {
+                    "anyOf": [{"type": "array"}, {"type": "string"}, {"type": "integer"}, {"type": "null"}]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

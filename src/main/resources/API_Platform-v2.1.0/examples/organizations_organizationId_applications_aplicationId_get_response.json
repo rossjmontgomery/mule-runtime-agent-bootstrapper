@@ -1,0 +1,138 @@
+{
+  "audit": {
+    "created": {
+      "date": "2016-08-02T16:20:44.420Z"
+    },
+    "updated": {}
+  },
+  "masterOrganizationId": "f0c9b011-980e-4928-9430-e60e3a97c043",
+  "id": 21265,
+  "name": "app_test",
+  "description": "App for test",
+  "coreServicesId": "9314239e3bff4cdf9ae3000a3eebd1e8",
+  "url": "http://www.app-test.com",
+  "grantTypes": [],
+  "redirectUri": [],
+  "clientId": "9314239e3bff4cdf9ae3000a3eebd1e8",
+  "clientSecret": "b7845fa4e9ec42828980B9F5A62C3FCC",
+  "owner": "Organization Owner",
+  "email": "api.platform.qa+o_o@gmail.com",
+  "owners": [
+    {
+      "id": "57e281b5-ec5b-4701-80a0-92a936a68da3",
+      "createdAt": "2014-07-27T18:14:10.243Z",
+      "updatedAt": "2016-08-02T13:47:23.677Z",
+      "firstName": "Organization",
+      "lastName": "Owner",
+      "email": "api.platform.qa+o_o@gmail.com",
+      "phoneNumber": null,
+      "idprovider_id": "mulesoft",
+      "username": "organization_owner",
+      "enabled": true,
+      "deleted": false,
+      "organization": {
+        "name": "MuleSoft Inc",
+        "id": "f0c9b011-980e-4928-9430-e60e3a97c043",
+        "createdAt": "2014-07-27T18:14:59.718Z",
+        "updatedAt": "2016-06-13T15:41:15.825Z",
+        "ownerId": "57e281b5-ec5b-4701-80a0-92a936a68da3",
+        "clientId": "59cdf0ea56cd45fc9e462b41dd961f60",
+        "domain": "mulesoft-inc",
+        "idprovider_id": "mulesoft",
+        "isFederated": false,
+        "parentOrganizationIds": [],
+        "subOrganizationIds": [
+          "54c65a26-f6bf-4e29-8ae8-70b6d9a79755",
+          "239bcbaf-6d92-4af6-800e-9dcc5da47535",
+          "4a096865-d15a-4957-9fd0-b0bc4373a761",
+          "e6d2bb2d-a2da-4d5b-9754-5a85a697ec6a",
+          "0856e721-250a-45cf-8994-447fc4477ac1",
+          "872bfe33-b3d7-4ebf-a02b-8ff70de9fda7",
+          "ea91425b-7b0f-446a-9fbe-680db9755068",
+          "2ff7ed98-f4c3-4c39-be01-27f46cfd0295"
+        ],
+        "tenantOrganizationIds": [],
+        "isMaster": true,
+        "subscription": {
+          "type": "Employee",
+          "expiration": null
+        },
+        "properties": {
+          "cs_auth": {
+            "session_timeout": 10800000
+          }
+        },
+        "entitlements": {
+          "hybrid": {
+            "enabled": false
+          },
+          "createSubOrgs": true,
+          "apis": {
+            "enabled": true
+          },
+          "globalDeployment": false,
+          "createEnvironments": true,
+          "loadBalancer": {
+            "assigned": 0
+          },
+          "mqMessages": {
+            "base": 50000000,
+            "addOn": 0
+          },
+          "autoscaling": false,
+          "armAlerts": false,
+          "workerLoggingOverride": {
+            "enabled": false
+          },
+          "vCoresSandbox": {
+            "assigned": 0,
+            "reassigned": 0
+          },
+          "staticIps": {
+            "assigned": 0,
+            "reassigned": 0
+          },
+          "vCoresProduction": {
+            "assigned": 1,
+            "reassigned": 1
+          },
+          "externalIdentity": true,
+          "gateways": {
+            "assigned": 1
+          },
+          "partnersProduction": {
+            "assigned": 1000
+          },
+          "partnersSandbox": {
+            "assigned": 1000
+          },
+          "mqRequests": {
+            "base": 500000000,
+            "addOn": 0
+          },
+          "vpcs": {
+            "assigned": 0,
+            "reassigned": 0
+          },
+          "hybridInsight": false,
+          "messaging": {
+            "assigned": 1
+          }
+        }
+      },
+      "organizationPreferences": {
+        "f0c9b011-980e-4928-9430-e60e3a97c043": {
+          "defaultEnvironment": "546219c6e4b0bf83df2e86ba"
+        },
+        "e6d2bb2d-a2da-4d5b-9754-5a85a697ec6a": {
+          "defaultEnvironment": "a2e95cd0-f6e4-4d39-9d47-4c18641ff868"
+        }
+      },
+      "properties": {
+        "cs_auth": {
+          "activeOrganizationId": "0856e721-250a-45cf-8994-447fc4477ac1"
+        }
+      }
+    }
+  ]
+}

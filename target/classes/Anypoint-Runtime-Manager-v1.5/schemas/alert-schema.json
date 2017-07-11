@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://anypoint.io/amc/alert",
+  "type": "object",
+  "properties": {
+    "id": {
+      "id": "http://anypoint.io/amc/alert/id",
+      "type": "integer",
+      "description": "Id of the alert stored in ARM"
+    },
+    "timeCreated": {
+      "id": "http://anypoint.io/amc/alert/timeCreated",
+      "type": "integer"
+    },
+    "timeUpdated": {
+      "id": "http://anypoint.io/amc/alert/timeUpdated",
+      "type": "integer"
+    },
+    "description": {
+      "id": "http://anypoint.io/amc/alert/name",
+      "type": "string",
+      "description": "Name of the alert free text to easy identify the alert."
+    },
+    "enabled":{
+      "id": "http://anypoint.io/amc/alert/boolean",
+      "type": "boolean"
+    },
+    "severity": {
+      "id": "http://anypoint.io/amc/alert/severity",
+      "enum": [
+        "CRITICAL",
+        "WARNING",
+        "INFO"
+      ],
+      "description": "Severity level."
+    },
+    "action": {
+      "id": "http://anypoint.io/amc/alert/action",
+      "type": "object",
+      "properties": {
+        "notification": {
+          "id": "http://anypoint.io/amc/alert/action/notification",
+          "type": "object",
+          "properties": {
+            "recipients": {
+              "id": "http://anypoint.io/amc/alert/action/notification/recipients",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "id": "http://anypoint.io/amc/alert/event",
+      "type": "object",
+      "oneOf": [
+        {
+          "properties": {
+            "resourceType": {
+              "enum": [ "SERVER" ]
+            },
+            "resources":{
+              "type": "array",
+              "items":{
+                "type": "integer"
+              }
+            },
+            "event":{
+              "enum": ["CONFIGURED", "CREATED", "DISCONNECTED", "CONNECTED", "CONNECTION_REJECTED", "RUNTIME_VERSION_UPDATED", "AGENT_VERSION_UPDATED", "DELETED"  ]
+            }
+          }
+          },
+        {
+          "properties": {
+            "resourceType": {
+              "enum": [ "SERVER_GROUP", "CLUSTER" ]
+            },
+            "resources":{
+              "type": "array",
+              "items":{
+                "type": "integer"
+              }
+            },
+            "event":{
+              "enum": ["CONFIGURED", "CREATED", "DISCONNECTED", "CONNECTED", "CONNECTION_REJECTED","RUNTIME_VERSION_UPDATED", "AGENT_VERSION_UPDATED", "SIZE_REDUCED", "SIZE_INCREASED", "DELETED"  ]
+            }
+          }
+        },
+        {
+          "properties": {
+            "resourceType": {
+              "enum": [ "APPLICATION" ]
+            },
+            "resources":{
+              "type": "array",
+              "items":{
+                "type": "integer"
+              }
+            },
+            "event":{
+              "enum": ["DEPLOYED", "UNDEPLOYED", "STOPPED", "STARTED", "DEPLOYMENT_FAILED"  ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "timeCreated",
+    "timeUpdated",
+    "name",
+    "condition",
+    "action"
+  ]
+}

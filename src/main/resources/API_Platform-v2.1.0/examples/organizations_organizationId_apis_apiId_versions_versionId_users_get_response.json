@@ -1,0 +1,13 @@
+[
+  {
+    "id": "ad87ddeb-c1e2-4ada-b245-c2b5a93e25b0",
+    "username": "fescobar2",
+    "firstName": "Frank",
+    "lastName": "Escobar",
+    "email": "fedark@hotmail.com",
+    "enabled": true,
+    "idprovider_id": "mulesoft",
+    "createdAt": "2016-07-27T13:50:54.842Z",
+    "updatedAt": "2016-07-27T14:00:58.357Z"
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "total": 1,
+  "apis": [
+    {
+      "audit": {
+        "created": {
+          "date": "2016-07-04T14:09:24.364Z"
+        },
+        "updated": {}
+      },
+      "masterOrganizationId": "39db3c7a-9283-456c-b1e8-c4d119cba058",
+      "organizationId": "39db3c7a-9283-456c-b1e8-c4d119cba058",
+      "id": 80804,
+      "name": "118024",
+      "versions": [
+        {
+          "audit": {
+            "created": {
+              "date": "2016-07-04T14:09:24.364Z"
+            },
+            "updated": {
+              "date": "2016-07-04T14:10:38.555Z"
+            }
+          },
+          "masterOrganizationId": "39db3c7a-9283-456c-b1e8-c4d119cba058",
+          "organizationId": "39db3c7a-9283-456c-b1e8-c4d119cba058",
+          "id": 80287,
+          "apiId": 80804,
+          "portalId": 29189,
+          "name": "118024",
+          "description": null,
+          "tags": [],
+          "order": 1,
+          "rootFileId": 915982,
+          "deprecated": false,
+          "lastActiveDate": null,
+          "endpointUri": null,
+          "terms": null,
+          "termsDate": "2016-07-04T14:10:38.555Z",
+          "portal": {
+            "isPublic": true
+          },
+          "pinned": false,
+          "masterOrganizationName": "adrian.pineyro",
+          "portalUrl": "https://anypoint.mulesoft.com/apiplatform/adrian.pineyro/#/portals/organizations/39db3c7a-9283-456c-b1e8-c4d119cba058/apis/80804/versions/80287",
+          "ramlUrl": "https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/39db3c7a-9283-456c-b1e8-c4d119cba058/public/apis/80804/versions/80287/files/root"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "type": "api-request-count",
+  "apialertsVersion": "1.0.0",
+  "api": {
+    "name": "My First API",
+    "id": "foo-api-id"
+  },
+  "apiVersion": {
+    "name": "First version",
+    "id": "foo-api-version-id"
+  },
+  "enabled": true,
+  "resources": ["foo-api-version-id"],
+  "name": "My First API's Request Count Alert",
+  "severity": "WARNING",
+  "recipients": [{
+    "type": "role",
+    "value": "API_VERSION_OWNER"
+  }, {
+    "type": "user",
+    "value": "foo-user-id"
+  }, {
+    "type": "email",
+    "value": "foo_email@example.com"
+  }],
+  "period": {
+    "duration": {
+      "count": 1,
+      "weight": "HOURS"
+    },
+    "repeat": 4
+  },
+  "condition": {
+    "resourceType": "api-version",
+    "aggregate": "COUNT",
+    "operator": "GREATER_THAN",
+    "value": 1000,
+    "filter": [{
+      "property": "apiVersionId",
+      "operator": "EQUAL",
+      "values": ["foo-api-version-id"]
+    }]
+  }
+}

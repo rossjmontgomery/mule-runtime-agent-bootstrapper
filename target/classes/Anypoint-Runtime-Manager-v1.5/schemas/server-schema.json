@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://anypoint.io/amc/server",
+  "type": "object",
+  "properties": {
+    "id": {
+      "id": "http://anypoint.io/amc/server/id",
+      "type": "integer"
+    },
+    "timeCreated": {
+      "id": "http://anypoint.io/amc/server/timeCreated",
+      "type": "integer"
+    },
+    "timeUpdated": {
+      "id": "http://anypoint.io/amc/server/timeUpdated",
+      "type": "integer"
+    },
+    "name": {
+      "id": "http://anypoint.io/amc/server/name",
+      "type": "string"
+    },
+     "gatewayVersion": {
+      "id": "http://anypoint.io/amc/server/gatewayVersion",
+      "type": "string"
+    },
+     "agentVersion": {
+      "id": "http://anypoint.io/amc/server/agentVersion",
+      "type": "string"
+    },
+    "status": {
+      "id": "http://anypoint.io/amc/server/status",
+      "enum": ["CREATED","RUNNING", "CONNECTED", "DISCONNECTED"]
+    },
+    "currentClusteringIP": {
+      "id": "http://anypoint.io/amc/server/currentClusteringIP",
+      "type": "string"
+    },
+    "memberUUID": {
+      "id": "http://anypoint.io/amc/server/memberUUID",
+      "type": "string"
+    },
+    "serverType":{
+      "id": "http://anypoint.io/amc/server/serverType",
+      "enum": [ "MULE", "GATEWAY" ]
+    },
+    "addresses": {
+      "id": "http://anypoint.io/amc/server/addresses",
+      "type": "array",
+      "items": {
+        "type":"object",
+        "properties": {
+          "ip": {
+            "type":"string",
+            "id": "http://anypoint.io/amc/server/addresses/id"
+           },
+           "networkInterface": {
+             "type":"string",
+             "id": "http://anypoint.io/amc/server/addresses/networkInterface"
+           }
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "timeCreated",
+    "timeUpdated",
+    "name",
+    "type",
+    "status"
+  ]
+}

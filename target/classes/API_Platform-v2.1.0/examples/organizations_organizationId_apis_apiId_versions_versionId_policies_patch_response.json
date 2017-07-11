@@ -1,0 +1,44 @@
+[
+  {
+    "audit": {
+      "created": {},
+      "updated": {
+        "date": "2016-08-19T21:03:25.586Z"
+      }
+    },
+    "masterOrganizationId": "7cb97462-be63-486e-a5d9-d2688fe30bbc",
+    "organizationId": "7cb97462-be63-486e-a5d9-d2688fe30bbc",
+    "id": 69363,
+    "apiVersionId": 86440,
+    "policyTemplateId": "ip-whitelist",
+    "configurationData": {
+      "ipExpression": null,
+      "ips": [
+        "192.168.43.55"
+      ]
+    },
+    "order": 1
+  },
+  {
+    "audit": {
+      "created": {},
+      "updated": {
+        "date": "2016-08-19T21:03:25.586Z"
+      }
+    },
+    "masterOrganizationId": "7cb97462-be63-486e-a5d9-d2688fe30bbc",
+    "organizationId": "7cb97462-be63-486e-a5d9-d2688fe30bbc",
+    "id": 69378,
+    "apiVersionId": 86440,
+    "policyTemplateId": "xml-threat-protection",
+    "configurationData": {
+      "maxNodeDepth": -1,
+      "maxAttributeCountPerElement": -1,
+      "maxChildCount": -1,
+      "maxTextLength": -1,
+      "maxAttributeLength": -1,
+      "maxCommentLength": -1
+    },
+    "order": 2
+  }
+]

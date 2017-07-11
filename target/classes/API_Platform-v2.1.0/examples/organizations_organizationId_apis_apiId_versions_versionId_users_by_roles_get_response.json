@@ -1,0 +1,19 @@
+[
+  {
+    "id": "22c691f7-592c-433d-a41f-00a8a827dd44",
+    "createdAt": "2015-12-10T22:29:59.710Z",
+    "updatedAt": "2016-03-11T18:01:12.801Z",
+    "organizationId": "f0c9b011-980e-4928-9430-e60e3a97c043",
+    "firstName": "Francisco",
+    "lastName": "Meza",
+    "email": "francisco.meza@mulesoft.com",
+    "phoneNumber": "9252169777",
+    "idprovider_id": "mulesoft",
+    "username": "franciscomeza",
+    "enabled": true,
+    "deleted": false,
+    "roles": [
+      "PORTAL ACCESS"
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "name": "MuleSoft Inc",
+  "id": "f0c9b011-980e-4928-9430-e60e3a97c043",
+  "createdAt": "2014-07-27T18:14:59.718Z",
+  "updatedAt": "2016-06-13T15:41:15.825Z",
+  "ownerId": "57e281b5-ec5b-4701-80a0-92a936a68da3",
+  "clientId": "59cdf0ea56cd45fc9e462b41dd961f60",
+  "domain": "mulesoft-inc",
+  "idprovider_id": "mulesoft",
+  "isFederated": false,
+  "parentOrganizationIds": [],
+  "subOrganizationIds": [
+    "54c65a26-f6bf-4e29-8ae8-70b6d9a79755",
+    "239bcbaf-6d92-4af6-800e-9dcc5da47535",
+    "4a096865-d15a-4957-9fd0-b0bc4373a761",
+    "e6d2bb2d-a2da-4d5b-9754-5a85a697ec6a",
+    "0856e721-250a-45cf-8994-447fc4477ac1",
+    "872bfe33-b3d7-4ebf-a02b-8ff70de9fda7",
+    "ea91425b-7b0f-446a-9fbe-680db9755068",
+    "2ff7ed98-f4c3-4c39-be01-27f46cfd0295"
+  ],
+  "tenantOrganizationIds": [],
+  "parentName": null,
+  "parentId": null,
+  "isMaster": true,
+  "subscription": {
+    "type": "Employee",
+    "expiration": null
+  }
+}

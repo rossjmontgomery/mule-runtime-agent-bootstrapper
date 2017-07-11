@@ -1,0 +1,13 @@
+{
+  "audit": {
+    "created": {
+      "date": "2016-02-29T17:46:04.061Z"
+    },
+    "updated": {}
+  },
+  "id": 22,
+  "masterOrganizationId": "f0c9b011-980e-4928-9430-e60e3a97c043",
+  "organizationId": "f0c9b011-980e-4928-9430-e60e3a97c043",
+  "text": "updated!\n",
+  "updatedDate": null
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "54da1a0be4b0262631c4fd0d",
+    "name": "Development",
+    "organizationId": "22e91a78-1829-4c35-bd41-44ad1eb20c2e",
+    "isProduction": false,
+    "permissions": {
+      "applications": {
+        "delete": true,
+        "create": true
+      }
+    }
+  }
+]

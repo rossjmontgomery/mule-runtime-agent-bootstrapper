@@ -1,0 +1,5 @@
+--myBoundary
+Content-Disposition: form-data; name="json"
+
+{"headerBtnBgColor":"#587fhc","headerBgColor":"#ff003d","faviconKey":"org/f0c9b011-980e-4928-9430-e60e3a97c043/a822e520-601f-11e5-b94e-fb05495be3d4","faviconUrl":"/apiplatform/repository/v2/organizations/f0c9b011-980e-4928-9430-e60e3a97c043/public/theme/favicon","headerBadgeBgColor":"#f0ad4e"}
+--myBoundary--

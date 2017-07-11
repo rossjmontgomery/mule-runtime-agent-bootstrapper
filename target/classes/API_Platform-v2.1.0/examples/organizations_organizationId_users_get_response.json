@@ -1,0 +1,24 @@
+[
+  {
+    "id": "be76e3cf-b240-416f-a0b7-3958a66ae2cf",
+    "username": "admin",
+    "firstName": "Admin",
+    "lastName": "Smith",
+    "email": "xxx@gmail.com",
+    "enabled": true,
+    "idprovider_id": "mulesoft",
+    "createdAt": "2014-07-27T18:14:40.544Z",
+    "updatedAt": "2016-04-19T01:27:13.357Z"
+  },
+  {
+    "id": "5e9a913e-993a-407f-8e0e-ac4039394259",
+    "username": "ZiJt5E2muFbGanqdJJKIllxMmkrhtltV",
+    "firstName": "Admin",
+    "lastName": "User",
+    "email": "api.platform.qa+admin@gmail.com",
+    "enabled": true,
+    "idprovider_id": "mulesoft",
+    "createdAt": "2014-07-27T18:13:16.704Z",
+    "updatedAt": "2014-07-27T18:15:01.228Z"
+  }
+]

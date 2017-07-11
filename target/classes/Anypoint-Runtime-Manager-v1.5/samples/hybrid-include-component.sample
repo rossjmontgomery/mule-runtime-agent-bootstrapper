@@ -1,0 +1,8 @@
+{
+   "configurableComponentId":123, 
+   "enabled":true,
+   "configuration":{
+      "trackingLevel":"DEBUG"
+   }
+   
+}

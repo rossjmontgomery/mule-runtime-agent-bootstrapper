@@ -1,0 +1,14 @@
+{
+  "apiVersionId": 26404,
+  "policyVersion": "v9",
+  "policyTemplateId": "ip-blacklist",
+  "configurationData": {
+    "ipExpression": "#[message.inboundProperties['X-Forwarded-For']]",
+    "ips": ["192.168.0.1/24"]
+  },
+  "pointcutData": [{
+    "methodRegex": "GET|POST",
+    "uriTemplateRegex": "/(fixture|positions).*"
+  }],
+  "id": null
+}

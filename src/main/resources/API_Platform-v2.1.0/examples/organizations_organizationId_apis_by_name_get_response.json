@@ -1,0 +1,55 @@
+{
+  "audit": {
+    "created": {
+      "date": "2016-07-16T17:32:02.884Z"
+    },
+    "updated": {}
+  },
+  "masterOrganizationId": "f0c9b011-980e-4928-9430-e60e3a97c043",
+  "organizationId": "f0c9b011-980e-4928-9430-e60e3a97c043",
+  "id": 86182,
+  "name": "ws",
+  "versions": [
+    {
+      "audit": {
+        "created": {
+          "date": "2016-07-16T17:32:02.884Z"
+        },
+        "updated": {
+          "date": "2016-07-18T22:49:45.351Z"
+        }
+      },
+      "masterOrganizationId": "f0c9b011-980e-4928-9430-e60e3a97c043",
+      "organizationId": "f0c9b011-980e-4928-9430-e60e3a97c043",
+      "id": 83338,
+      "apiId": 86182,
+      "portalId": null,
+      "name": "1",
+      "description": null,
+      "tags": [],
+      "order": 1,
+      "rootFileId": 939572,
+      "deprecated": false,
+      "lastActiveDate": null,
+      "endpointUri": null,
+      "terms": null,
+      "termsDate": null,
+      "endpoint": {
+        "audit": {
+          "created": {},
+          "updated": {}
+        },
+        "id": 29782,
+        "type": "http",
+        "uri": "http://cfte.cloudhub",
+        "proxyUri": "http://0.0.0.0:8081/",
+        "proxyRegistrationUri": null,
+        "lastActiveDate": null,
+        "isCloudHub": true,
+        "policiesVersion": null,
+        "referencesUserDomain": false
+      },
+      "deployment": null
+    }
+  ]
+}

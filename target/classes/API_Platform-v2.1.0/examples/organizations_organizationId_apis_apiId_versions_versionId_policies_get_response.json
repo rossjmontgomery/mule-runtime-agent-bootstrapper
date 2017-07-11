@@ -1,0 +1,33 @@
+[
+  {
+    "audit": {
+      "created": {
+        "date": "2016-07-29T18:43:56.937Z"
+      },
+      "updated": {}
+    },
+    "masterOrganizationId": "f0c9b011-980e-4928-9430-e60e3a97c043",
+    "organizationId": "0856e721-250a-45cf-8994-447fc4477ac1",
+    "id": 65455,
+    "apiVersionId": 85965,
+    "policyTemplateId": "cors",
+    "configurationData": {
+      "publicResource": true,
+      "supportCredentials": false,
+      "originGroups": [],
+      "policyId": 65455,
+      "endpointUri": "https:\\/\\/mocksvc\\.mulesoft\\.com\\/mocks\\/520bfa5a\\-9afb\\-47b6\\-a770\\-5f86a890170e",
+      "isRamlEndpoint": true,
+      "isWsdlEndpoint": false,
+      "isHttpEndpoint": false,
+      "apiId": 94516,
+      "apiVersionId": 85965,
+      "apiName": "apiTest",
+      "apiVersionName": "1.0",
+      "order": null
+    },
+    "order": null,
+    "template": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<policy xmlns=\"http://www.mulesoft.org/schema/mule/policy\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:cors=\"http://www.mulesoft.org/schema/mule/cors\" xsi:schemaLocation=\"http://www.mulesoft.org/schema/mule/policy http://www.mulesoft.org/schema/mule/policy/current/mule-policy.xsd http://www.mulesoft.org/schema/mule/cors http://www.mulesoft.org/schema/mule/cors/current/mule-cors.xsd\" online=\"true\">\n  <before>\n    <cors:validate xmlns:cors=\"http://www.mulesoft.org/schema/mule/cors\" publicResource=\"true\"/>\n  </before>\n  <pointcut>\n    <endpoint xmlns=\"http://www.mulesoft.org/schema/mule/policy\" regex=\"https:\\/\\/mocksvc\\.mulesoft\\.com\\/mocks\\/520bfa5a\\-9afb\\-47b6\\-a770\\-5f86a890170e\"/>\n  </pointcut>\n</policy>\n",
+    "standalone": true
+  }
+]

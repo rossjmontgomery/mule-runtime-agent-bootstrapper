@@ -1,0 +1,30 @@
+description: An <<resourcePathName | !singularize>> Item
+get:
+  description: Gets an <<resourcePathName | !singularize>>.
+  responses:
+    401:
+      description: Authentication requirements not fulfilled.
+    403:
+      description: Insufficient permissions.
+    404:
+      description: Specified <<resourcePathName | !singularize>> not found.
+patch:
+  description: Updates a <<resourcePathName | !singularize>>.
+  responses:
+    400:
+      description: Invalid <<resourcePathName | !singularize>> payload.
+    401:
+      description: Authentication requirements not fulfilled.
+    403:
+      description: Insufficient permissions.
+    404:
+      description: Specified <<resourcePathName | !singularize>> not found.
+delete:
+  description: Deletes an <<resourcePathName | !singularize>>.
+  responses:
+    401:
+      description: Authentication requirements not fulfilled.
+    403:
+      description: Insufficient permissions.
+    404:
+      description: <<resourcePathName | !singularize>> not found.

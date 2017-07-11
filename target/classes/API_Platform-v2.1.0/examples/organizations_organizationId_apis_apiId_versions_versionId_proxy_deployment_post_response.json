@@ -1,0 +1,19 @@
+{
+   "type":"CH",
+   "overwrite":true,
+   "applicationName":"api3",
+   "environmentId":"e13f4194-d679-483c-8d01-9fccb132491c",
+   "environmentName":"Production",
+   "gatewayVersion":"3.8.0",
+   "apiVersionId":86440,
+   "audit":{
+      "created":{
+         "date":"2016-08-01T19:06:19.083Z"
+      },
+      "updated":{
+
+      }
+   },
+   "masterOrganizationId":"7cb97462-be63-486e-a5d9-d2688fe30bbc",
+   "organizationId":"7cb97462-be63-486e-a5d9-d2688fe30bbc"
+}
