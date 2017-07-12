@@ -1,8 +1,0 @@
-{
-   "apiId": 94516, 
-   "apiVersionId": 85965,
-   "isDirectory": false,
-   "name": "api.raml",
-   "apiName": "the-api-name",
-   "data": "This is some required data"
-}

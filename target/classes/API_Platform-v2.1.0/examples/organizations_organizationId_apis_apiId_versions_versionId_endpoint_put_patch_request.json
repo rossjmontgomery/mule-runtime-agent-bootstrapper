@@ -1,8 +1,0 @@
-{
-    "id": 30975,
-    "type": "raml",
-    "uri": "http://www.mockdomain2.com",
-    "isCloudHub": true,
-    "proxyUri": "http://0.0.0.0:8081/",
-    "responseTimeout": 10000
-}

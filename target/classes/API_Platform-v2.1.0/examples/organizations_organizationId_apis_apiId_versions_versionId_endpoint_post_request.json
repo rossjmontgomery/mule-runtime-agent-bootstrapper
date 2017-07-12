@@ -1,6 +1,0 @@
-{
-    "type": "raml",
-    "uri": "http://www.mockdomain.com",
-    "isCloudHub": true, 
-    "proxyUri": "http://0.0.0.0:8081/"
-}

@@ -1,9 +1,0 @@
-{
-   "redirectUri":[
-
-   ],
-   "apiEndpoints":false,
-   "name":"app_test",
-   "description":"App for test",
-   "url":"http://www.app-test.com"
-}
