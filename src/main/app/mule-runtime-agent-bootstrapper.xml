@@ -53,7 +53,8 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
             </http:request-builder>
         </http:request>
         <flow-ref name="transform-json-to-hashmap-subflow" doc:name="transform-json-to-hashmap-subflow"/>
-        <logger message="#['registration token = ' + payload.data]" level="INFO" doc:name="display registration token"/>
+        <set-payload value="#[payload.data]" doc:name="store registration token in payload"/>
+        <logger message="#['registration token = ' + payload]" level="INFO" doc:name="display registration token"/>
     </sub-flow>
     <sub-flow name="unregister-the-server-subflow">
         <http:request config-ref="Anypoint_Runtime_Manager_API" path="/servers/{serverId}" method="DELETE" doc:name="delete the server">
@@ -72,7 +73,8 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
         <flow-ref name="get-development-environment-id-subflow" doc:name="get-development-environment-id-subflow"/>
         <flow-ref name="get-server-info-subflow" doc:name="get-server-info-subflow"/>
         <choice doc:name="Is server already registered?">
-            <when expression="#[!NullPayload.getInstance().equals(message.payload)]">
+            <when expression="#[message.payload != null]">
+                <logger message="SERVER IS ALREADY REGISTERED" level="INFO" doc:name="Server is already registered"/>
                 <flow-ref name="unregister-the-server-subflow" doc:name="unregister-the-server-subflow"/>
             </when>
             <otherwise>
@@ -92,8 +94,8 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
             </http:request-builder>
         </http:request>
         <flow-ref name="transform-json-to-hashmap-subflow" doc:name="transform-json-to-hashmap-subflow"/>
-        <custom-transformer returnClass="java.lang.String" class="uk.co.simplyhealth.ExtractServerInfoFromServerList" doc:name="extract server info from server list"/>
-        <logger message="#['server already registered: '+ payload.toString()]" level="INFO" doc:name="log server info"/>
+        <custom-transformer  class="uk.co.simplyhealth.ExtractServerInfoFromServerList" doc:name="extract server info from server list"/>
+        <logger message="#['server info = ' + payload]" level="INFO" doc:name="log server info"/>
     </sub-flow>
     <sub-flow name="get-development-environment-id-subflow">
         <http:request config-ref="Anypoint_Platform_API" path="/organizations/{organizationId}/environments" method="GET" doc:name="get list of environments for current organization">
