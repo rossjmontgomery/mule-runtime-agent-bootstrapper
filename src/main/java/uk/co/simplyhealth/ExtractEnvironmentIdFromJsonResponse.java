@@ -15,7 +15,7 @@ public class ExtractEnvironmentIdFromJsonResponse extends AbstractTransformer {
 		List<Map<Object, Object>> environments = (List<Map<Object, Object>>) src;
 		
 		return environments.stream()
-			.filter(environment -> "Development".equals(environment.get("name")))
+			.filter(environment -> "Development".equalsIgnoreCase((String) environment.get("name")))
 			.findFirst().get()
 			.get("id");
 	}
