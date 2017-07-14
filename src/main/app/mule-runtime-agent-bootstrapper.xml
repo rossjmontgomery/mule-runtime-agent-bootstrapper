@@ -10,7 +10,6 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 http://www.mulesoft.org/schema/mule/oauth2 http://www.mulesoft.org/schema/mule/oauth2/current/mule-oauth2.xsd
 http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
-    <http:listener-config name="httpListenerConfig" host="0.0.0.0" port="${http.port}" doc:name="HTTP Listener Configuration"/>
     <apikit:config name="apiConfig" raml="api.raml" consoleEnabled="false" doc:name="Router"/>
     <context:property-placeholder location="api.properties" />
     <http:request-config name="Anypoint_Platform_Login" protocol="HTTPS" host="anypoint.mulesoft.com" port="443" basePath="/accounts" doc:name="HTTP Request Configuration">
@@ -35,15 +34,6 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
 <!--         </oauth2:authorization-code-grant-type> -->
         <http:raml-api-configuration location="API_Platform-v2.1.0/api.raml"/>
     </http:request-config>
-    <flow name="api-main">
-        <http:listener config-ref="httpListenerConfig" path="/api/*" doc:name="HTTP"/>
-        <apikit:router config-ref="apiConfig" doc:name="APIkit Router"/>
-        <exception-strategy ref="apiKitGlobalExceptionMapping" doc:name="Reference Exception Strategy"/>
-    </flow>
-    <flow name="api-console">
-        <http:listener config-ref="httpListenerConfig" path="/console/*" doc:name="HTTP"/>
-        <apikit:console config-ref="apiConfig" doc:name="APIkit Console"/>
-    </flow>
     <sub-flow name="get-server-registration-token-subflow">
         <http:request config-ref="Anypoint_Runtime_Manager_API" path="/servers/registrationToken" method="GET" doc:name="get server registration token">
             <http:request-builder>
@@ -67,12 +57,28 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
             <http:success-status-code-validator values="204"/>
         </http:request>
     </sub-flow>
-    <flow name="post:/admin/runtime-agent-bootstrapper:apiConfig">
+    <flow name="main-flow">
+        <poll doc:name="initiate runtime agent bootstrap process">
+            <fixed-frequency-scheduler frequency="1000000000" timeUnit="DAYS"/>
+            <component class="uk.co.simplyhealth.RuntimeAgentConfigValidationComponent" doc:name="check for existence of Runtime Agent configuration files"/>
+        </poll>
+        <logger message="#['runtime agent config exists: ' + payload]" level="INFO" doc:name="Runtime Agent Config Exists?"/>
+        <choice doc:name="Is the Runtime Agent already configured?">
+            <when expression="#[payload == true]">
+                <component class="uk.co.simplyhealth.UndeploymentComponent" doc:name="undeploy the bootstrapper application"/>
+            </when>
+            <otherwise>
+                <flow-ref name="configure-runtime-agent-subflow" doc:name="configure-runtime-agent-subflow"/>
+            </otherwise>
+        </choice>
+
+    </flow>
+    <sub-flow name="configure-runtime-agent-subflow">
         <flow-ref name="login-to-anypoint-platform-subflow" doc:name="login-to-anypoint-platform-subflow"/>
         <flow-ref name="get-active-organizationId-subflow" doc:name="get-active-organizationId-subflow"/>
         <flow-ref name="get-development-environment-id-subflow" doc:name="get-development-environment-id-subflow"/>
         <flow-ref name="get-server-info-subflow" doc:name="get-server-info-subflow"/>
-        <choice doc:name="Is server already registered?">
+        <choice doc:name="Is the server already registered with the Runtime Manager?">
             <when expression="#[message.payload != null]">
                 <logger message="SERVER IS ALREADY REGISTERED" level="INFO" doc:name="Server is already registered"/>
                 <flow-ref name="unregister-the-server-subflow" doc:name="unregister-the-server-subflow"/>
@@ -83,8 +89,8 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
         </choice>
         <flow-ref name="get-server-registration-token-subflow" doc:name="get-server-registration-token-subflow"/>
         <component class="uk.co.simplyhealth.ServerRegistrationComponent" doc:name="register the server"/>
-
-    </flow>
+        <component class="uk.co.simplyhealth.ServerRestartComponent" doc:name="restart the server"/>
+    </sub-flow>
     <sub-flow name="get-server-info-subflow">
         <http:request config-ref="Anypoint_Runtime_Manager_API" path="/servers" method="GET" doc:name="get list of servers for current environment">
             <http:request-builder>
