@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class ExtractServerInfoFromServerList extends AbstractTransformer {
 	
-	@Value ("${server.name}")
+	@Value("#{systemEnvironment['SERVER_NAME']}")
 	private String serverName;
 
 	@Override
