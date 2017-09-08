@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class ServerRegistrationComponent implements Callable {
 
+	@Value("#{systemEnvironment['MULE_HOME']}")
+	private String muleHomeDirectoryPath;
+	
 	@Value("#{systemEnvironment['SERVER_NAME']}")
 	private String serverName;
 	
@@ -19,9 +22,9 @@ public class ServerRegistrationComponent implements Callable {
 		ProcessBuilder processBuilder = new ProcessBuilder();
 		
 		// ./amc_setup --encrypt --hybrid $ANYPOINT_PLATFORM_REGISTRATION_TOKEN mule-container-test
-		processBuilder.command("/opt/mule/bin/amc_setup", "--encrypt", "--hybrid", registrationToken, serverName);
+		processBuilder.command(muleHomeDirectoryPath + "/bin/amc_setup", "--encrypt", "--hybrid", registrationToken, serverName);
 
-		processBuilder.directory(new File("/opt/mule/bin"));
+		processBuilder.directory(new File(muleHomeDirectoryPath + "/bin"));
 		processBuilder.inheritIO();
 		
 //		Map<String, String> processEnvironment = processBuilder.environment();

@@ -11,7 +11,7 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 http://www.mulesoft.org/schema/mule/oauth2 http://www.mulesoft.org/schema/mule/oauth2/current/mule-oauth2.xsd
 http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
     <apikit:config name="apiConfig" raml="api.raml" consoleEnabled="false" doc:name="Router"/>
-    <context:property-placeholder location="api.properties" />
+    <context:property-placeholder location="mule-runtime-agent-bootstrapper.properties" />
     <http:request-config name="Anypoint_Platform_Login" protocol="HTTPS" host="anypoint.mulesoft.com" port="443" basePath="/accounts" doc:name="HTTP Request Configuration">
         <tls:context>
             <tls:trust-store path="${security.truststore.path}" password="${security.truststore.password}" type="jks"/>
